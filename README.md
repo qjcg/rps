@@ -1,4 +1,4 @@
-# RPS [![GoDoc][godoc-badge]][rps-godoc] [![Build Status][build-logo]][travis-rps]
+# RPS [![Build Status][build-logo]][travis-rps] [![GoDoc][godoc-badge]][rps-godoc]
 
 A library for playing the classic game of Rock, Paper,
 Scissors, intended as a learning tool.
