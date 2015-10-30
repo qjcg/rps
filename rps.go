@@ -29,16 +29,14 @@ func RandomHand() Hand {
 
 // Play a single game of Rock, Paper, Scissors and return the result.
 func Play(p1, p2 Hand) Result {
-	var r Result
 	switch {
 	case p1 == p2:
-		r = Tie
+		return Tie
 	case (p1 == Rock && p2 != Paper),
 		(p1 == Paper && p2 != Scissors),
 		(p1 == Scissors && p2 != Rock):
-		r = P1Win
+		return P1Win
 	default:
-		r = P2Win
+		return P2Win
 	}
-	return r
 }
