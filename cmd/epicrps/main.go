@@ -13,16 +13,16 @@ import (
 )
 
 const (
-	ROCK_ASCII     = "0"
-	PAPER_ASCII    = "#"
-	SCISSORS_ASCII = "X"
+	RockAscii     = "0"
+	PaperAscii    = "#"
+	ScissorsAscii = "X"
 
-	ROCK_LETTER     = "R"
-	PAPER_LETTER    = "P"
-	SCISSORS_LETTER = "S"
+	RockLetter     = "R"
+	PaperLetter    = "P"
+	ScissorsLetter = "S"
 
-	SCISSORS      = "✂"
-	SCISSORS_HAND = "✌"
+	Scissors     = "✂"
+	ScissorsHand = "✌"
 )
 
 type ScoreBoard struct {
@@ -45,9 +45,9 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 
 	HandSymbols := map[rps.Hand]string{
-		rps.Rock:     ROCK_ASCII,
-		rps.Paper:    PAPER_ASCII,
-		rps.Scissors: SCISSORS,
+		rps.Rock:     RockAscii,
+		rps.Paper:    PaperAscii,
+		rps.Scissors: Scissors,
 	}
 
 	ngames := flag.Int("n", 100000, "number of games to play")
@@ -71,22 +71,22 @@ func main() {
 			os.Exit(0)
 		}
 
-		p1_hand := rps.RandomHand()
-		p2_hand := rps.RandomHand()
+		handP1 := rps.RandomHand()
+		handP2 := rps.RandomHand()
 
-		switch rps.Play(p1_hand, p2_hand) {
+		switch rps.Play(handP1, handP2) {
 		case rps.Tie:
 			sb.ties++
-		case rps.P1Win:
+		case rps.WinP1:
 			sb.p1++
-		case rps.P2Win:
+		case rps.WinP2:
 			sb.p2++
 		}
 
 		sb.games++
 		if *live {
 			sb.Percentages()
-			fmt.Printf("\r(%.1f%%) %v  %s %s  %v (%.1f%%)  ties: %v (%.1f%%)  games: %v/%d ", sb.pctP1, sb.p1, paleBlue(HandSymbols[p1_hand]), paleBlue(HandSymbols[p2_hand]), sb.p2, sb.pctP2, sb.ties, sb.pctTies, sb.games, *ngames)
+			fmt.Printf("\r(%.1f%%) %v  %s %s  %v (%.1f%%)  ties: %v (%.1f%%)  games: %v/%d ", sb.pctP1, sb.p1, paleBlue(HandSymbols[handP1]), paleBlue(HandSymbols[handP2]), sb.p2, sb.pctP2, sb.ties, sb.pctTies, sb.games, *ngames)
 		}
 	}
 

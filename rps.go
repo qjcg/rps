@@ -17,8 +17,8 @@ const (
 	Scissors
 
 	// Results
-	P1Win Result = iota + 10
-	P2Win
+	WinP1 Result = iota + 10
+	WinP2
 	Tie
 )
 
@@ -35,8 +35,8 @@ func Play(p1, p2 Hand) Result {
 	case (p1 == Rock && p2 != Paper),
 		(p1 == Paper && p2 != Scissors),
 		(p1 == Scissors && p2 != Rock):
-		return P1Win
+		return WinP1
 	default:
-		return P2Win
+		return WinP2
 	}
 }

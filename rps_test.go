@@ -27,14 +27,14 @@ func TestPlay(t *testing.T) {
 		{Scissors, Scissors, Tie},
 
 		// p1 wins
-		{Rock, Scissors, P1Win},
-		{Paper, Rock, P1Win},
-		{Scissors, Paper, P1Win},
+		{Rock, Scissors, WinP1},
+		{Paper, Rock, WinP1},
+		{Scissors, Paper, WinP1},
 
 		// p2 wins
-		{Rock, Paper, P2Win},
-		{Paper, Scissors, P2Win},
-		{Scissors, Rock, P2Win},
+		{Rock, Paper, WinP2},
+		{Paper, Scissors, WinP2},
+		{Scissors, Rock, WinP2},
 	}
 
 	for _, c := range testcases {
