@@ -89,7 +89,4 @@ func main() {
 			fmt.Printf("\r(%.1f%%) %v  %s %s  %v (%.1f%%)  ties: %v (%.1f%%)  games: %v/%d ", sb.pctP1, sb.p1, paleBlue(HandSymbols[handP1]), paleBlue(HandSymbols[handP2]), sb.p2, sb.pctP2, sb.ties, sb.pctTies, sb.games, *ngames)
 		}
 	}
-
-	var input string
-	fmt.Scanln(&input)
 }
