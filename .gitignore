@@ -1,0 +1,6 @@
+# vim stuff
+*.swp
+.*.swp
+Session.vim
+*.renamed
+
