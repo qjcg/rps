@@ -24,7 +24,7 @@ const (
 
 // RandomHand returns a random Hand.
 func RandomHand() Hand {
-	return [3]Hand{Rock, Paper, Scissors}[rand.Intn(3)]
+	return Hand(rand.Intn(3))
 }
 
 // Play a single game of Rock, Paper, Scissors and return the result.
