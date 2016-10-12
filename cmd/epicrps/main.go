@@ -29,10 +29,10 @@ type ScoreBoard struct {
 	p1      int
 	p2      int
 	ties    int
+	games   int
 	pctP1   float64
 	pctP2   float64
 	pctTies float64
-	games   int
 }
 
 func (s *ScoreBoard) Percentages() {
@@ -44,7 +44,7 @@ func (s *ScoreBoard) Percentages() {
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	HandSymbols := map[rps.Hand]string{
+	HandSymbols := map[int]string{
 		rps.Rock:     RockAscii,
 		rps.Paper:    PaperAscii,
 		rps.Scissors: Scissors,

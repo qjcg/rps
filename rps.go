@@ -5,30 +5,25 @@ import (
 	"math/rand"
 )
 
-type (
-	Hand   int
-	Result int
-)
-
 const (
 	// Hands
-	Rock Hand = iota
+	Rock int = iota
 	Paper
 	Scissors
 
 	// Results
-	WinP1 Result = iota + 10
+	WinP1
 	WinP2
 	Tie
 )
 
 // RandomHand returns a random Hand.
-func RandomHand() Hand {
-	return Hand(rand.Intn(3))
+func RandomHand() int {
+	return rand.Intn(3)
 }
 
 // Play a single game of Rock, Paper, Scissors and return the result.
-func Play(p1, p2 Hand) Result {
+func Play(p1, p2 int) int {
 	switch {
 	case p1 == p2:
 		return Tie

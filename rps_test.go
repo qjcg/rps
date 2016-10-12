@@ -11,15 +11,15 @@ func TestRandomHand(t *testing.T) {
 	rand.Seed(time.Now().UnixNano())
 	v := RandomHand()
 	vt := reflect.TypeOf(v)
-	if vt.Kind() != reflect.Int || vt.Name() != "Hand" {
-		t.Error("expected a Hand, got", v)
+	if vt.Kind() != reflect.Int {
+		t.Error("expected an int, got", v)
 	}
 }
 
 func TestPlay(t *testing.T) {
 	var testcases = []struct {
-		p1, p2   Hand
-		expected Result
+		p1, p2   int
+		expected int
 	}{
 		// tie
 		{Rock, Rock, Tie},
