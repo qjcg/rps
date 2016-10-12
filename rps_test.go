@@ -2,17 +2,14 @@ package rps
 
 import (
 	"math/rand"
-	"reflect"
 	"testing"
 	"time"
 )
 
 func TestRandomHand(t *testing.T) {
 	rand.Seed(time.Now().UnixNano())
-	v := RandomHand()
-	vt := reflect.TypeOf(v)
-	if vt.Kind() != reflect.Int {
-		t.Error("expected an int, got", v)
+	if v := RandomHand(); v > 2 || v < 0 {
+		t.Error("expected an int value between 0 and 2, got", v)
 	}
 }
 
