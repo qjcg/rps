@@ -7,7 +7,7 @@ import (
 
 const (
 	// Hands
-	Rock int = iota
+	Rock = iota
 	Paper
 	Scissors
 
