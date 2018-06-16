@@ -6,8 +6,11 @@ import (
 	"time"
 )
 
-func TestRandomHand(t *testing.T) {
+func init() {
 	rand.Seed(time.Now().UnixNano())
+}
+
+func TestRandomHand(t *testing.T) {
 	if v := RandomHand(); v > 2 || v < 0 {
 		t.Error("expected an int value between 0 and 2, got", v)
 	}
