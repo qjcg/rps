@@ -1,3 +1,4 @@
+// An epic Rock, Paper, Scissors game.
 package main
 
 import (
@@ -66,7 +67,8 @@ func main() {
 				fmt.Println()
 			} else {
 				sb.Percentages()
-				fmt.Printf("\rp1: %v (%.3f%%)  p2: %v (%.3f%%)  ties: %v (%.3f%%)  games: %v/%d\n", sb.p1, sb.pctP1, sb.p2, sb.pctP2, sb.ties, sb.pctTies, sb.games, *ngames)
+				fmt.Printf("\rp1: %v (%.3f%%)  p2: %v (%.3f%%)  ties: %v (%.3f%%)  games: %v/%d\n",
+					sb.p1, sb.pctP1, sb.p2, sb.pctP2, sb.ties, sb.pctTies, sb.games, *ngames)
 			}
 			os.Exit(0)
 		}
@@ -86,7 +88,12 @@ func main() {
 		sb.games++
 		if *live {
 			sb.Percentages()
-			fmt.Printf("\r(%.1f%%) %v  %s %s  %v (%.1f%%)  ties: %v (%.1f%%)  games: %v/%d ", sb.pctP1, sb.p1, paleBlue(HandSymbols[handP1]), paleBlue(HandSymbols[handP2]), sb.p2, sb.pctP2, sb.ties, sb.pctTies, sb.games, *ngames)
+			fmt.Printf("\r(%.1f%%) %v  %s %s  %v (%.1f%%)  ties: %v (%.1f%%)  games: %v/%d ",
+				sb.pctP1, sb.p1,
+				paleBlue(HandSymbols[handP1]), paleBlue(HandSymbols[handP2]),
+				sb.p2, sb.pctP2,
+				sb.ties, sb.pctTies,
+				sb.games, *ngames)
 		}
 	}
 }
